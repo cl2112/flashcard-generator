@@ -27,31 +27,39 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1 formPanel">
 				<div class="panel panel-default">
-				  <div class="panel-heading">
-				    <h3 id="headline">Create a Flash Card</h3>
-				     <div class="btn-group cardTypeSelector" role="group" aria-label="card type selector">
-					  <button type="button" class="btn btn-default" id="cardTypeDef">Definition</button>
-					  <button type="button" class="btn btn-default" id="cardTypeCloze">Cloze</button>
+					<div class="panel-heading">
+					  <h3 id="headline">Your Flash Cards</h3>
 					</div>
-				  </div>
-				  <div class="panel-body">
-				   
-				    <form>
-					  <div class="form-group">
-					    <label>Card Title</label>
-					    <input type="text" class="form-control" id="cardTitle" placeholder="Card Title">
-					  </div>
-					  <div class="form-group">
-					    <label id="labelFront">Term</label>
-					    <input type="text" class="form-control" id="cardFront" placeholder="Front of Card (Ex. George Washington)">
-					  </div>
-					  <div class="form-group">
-					    <label id="labelBack">Definition</label>
-					    <input type="text" class="form-control" id="cardBack" placeholder="Back of Card (Ex. Was the first president of the U.S.A.)">
-					  </div>
-					</form>
-					<button class="btn btn-default" id="createBtn">Create Definition Flash Card</button>
-				  </div>
+					<div class="panel-body">
+						<div class="col-xs-2">
+							<div id="yourCardsNav" class="btn-group-vertical" role="group" aria-label="Flash Card Button Listing">
+							</div>
+						</div>
+						
+						<div class="col-xs-10 text-right">
+							<div class="cardViewPort">
+								<!-- Taken from https://davidwalsh.name/css-flip -->
+								<!-- =========================================== -->
+								<div class="flip-container">
+									<div class="flipper">
+										<div class="front">
+											<!-- front content -->
+											<h1>This is the front!</h1>
+										</div>
+										<div class="back">
+											<!-- back content -->
+											<h1>This is the back!</h1>
+										</div>
+									</div>
+								</div>
+								<!-- =========================================== -->
+							</div>
+							<div class="btn-group cardTypeSelector" role="group" aria-label="card type selector">
+								<button type="button" class="btn btn-default" id="cardViewFront">Card Front</button>
+								<button type="button" class="btn btn-default" id="cardViewBack">Card Back</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				
 		</div>

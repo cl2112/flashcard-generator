@@ -1,24 +1,38 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 
 
 var cardArray = [];
 
+cardArray = JSON.parse(localStorage.getItem("cardArray"));
+
+console.log(cardArray);
+
 var cardType = 1;
 
+$("#cardViewFront").on("click", function() {
+	$(".flipper").css("transform", "rotateY(0deg)");
+});
 
+$("#cardViewBack").on("click", function() {
+	$(".flipper").css("transform", "rotateY(180deg)");
+});
 
 
 $("#cardTypeDef").on("click", function(){
 	cardType = 1;
 	$("#labelFront").html("Term");
+	$("#cardFront").attr("placeholder", "Front of Card (Ex. George Washington)");
 	$("#labelBack").html("Definition");
+	$("#cardBack").attr("placeholder", "Back of Card (Ex. Was the first president of the U.S.A.)");
 	$("#createBtn").html("Create Definition Flash Card");
 });
 
 $("#cardTypeCloze").on("click", function(){
 	cardType = 2;
 	$("#labelFront").html("Cloze");
+	$("#cardFront").attr("placeholder", "Cloze Word (Ex. George Washington)");
 	$("#labelBack").html("Full Text");
+	$("#cardBack").attr("placeholder", "Full Text (Ex. George Washington was the first president of the U.S.A.)");
 	$("#createBtn").html("Create Cloze Flash Card");
 });
 
@@ -33,14 +47,26 @@ $("#createBtn").on("click", function () {
 		var card = new BasicCard(cardTitle, cardFront, cardBack);
 		cardArray.push(card);
 		console.log(cardArray);
+		localStorage.setItem("cardArray", JSON.stringify(cardArray));
 	} else if (cardType === 2) {
 		var card = new ClozeCard(cardTitle, cardFront, cardBack);
 		cardArray.push(card);
 		console.log(cardArray);
+		localStorage.setItem("cardArray", JSON.stringify(cardArray));
 	} else {
 		console.log("Error!");
 	};	
 });
+
+
+
+
+function fillYourCardsNav(){
+	for (var i=0; i<cardArray.length; i++) {
+		$("#yourCardsNav").append('<button type="button" class="btn btn-default" id="card'+i+'">'+cardArray[i].title+'</button>');
+		console.log("appended");
+	}
+}
 
 
 
@@ -98,5 +124,6 @@ function ClozeCard(title, cloze, text) {
 
 
 // End of .ready()
-});
+// });
 
+fillYourCardsNav();

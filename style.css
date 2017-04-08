@@ -60,13 +60,14 @@ text-align: right;
   perspective: 1000px;
 }
   /* flip the pane when hovered */
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
+ /* .flip-container:hover .flipper, .flip-container.hover .flipper {
     transform: rotateY(180deg);
   }
-
+*/
 .flip-container, .front, .back {
-  width: 320px;
-  height: 480px;
+  width: 500px;
+  height: 300px;
+  position: relative;
 }
 
 /* flip speed goes here */
@@ -100,3 +101,15 @@ text-align: right;
   background-color: red;
 }
 /*============================================================================*/
+
+
+
+.blue{
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+
