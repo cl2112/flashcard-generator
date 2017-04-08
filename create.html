@@ -28,13 +28,14 @@
 			<div class="col-md-10 col-md-offset-1 formPanel">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
-				    <h3>Create a Flash Card</h3>
-				  </div>
-				  <div class="panel-body">
-				    <div class="btn-group cardTypeSelector" role="group" aria-label="card type selector">
+				    <h3 id="headline">Create a Flash Card</h3>
+				     <div class="btn-group cardTypeSelector" role="group" aria-label="card type selector">
 					  <button type="button" class="btn btn-default">Definition</button>
 					  <button type="button" class="btn btn-default">Cloze</button>
 					</div>
+				  </div>
+				  <div class="panel-body">
+				   
 				    <form>
 					  <div class="form-group">
 					    <label>Card Title</label>
@@ -49,7 +50,7 @@
 					    <input type="text" class="form-control" id="cardBack" placeholder="Back of Card (Ex. Was the first president of the U.S.A.)">
 					  </div>
 					</form>
-
+					<button class="btn btn-default" id="createBtn">Create</button>
 				  </div>
 				</div>
 				

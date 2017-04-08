@@ -2,7 +2,12 @@ $(document).ready(function(){
 
 
 
-
+$("#createBtn").on("click", function () {
+	var cardTitle = $("#cardTitle").val().trim();
+	var cardFront = $("#cardFront").val().trim();
+	var cardBack = $("#cardBack").val().trim();
+	console.log(cardTitle, cardFront, cardBack);
+})
 
 
 
