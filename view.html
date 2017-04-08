@@ -15,14 +15,21 @@
 	<div class="container-fluid">
 		<div class="row">
 			<nav class="navbar navbar-default">
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="#">
-			        <img alt="Brand" src="logo.png" id="logoNav">
-			      </a>
-			    </div>
-			  </div>
-			</nav>
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				    	<a class="navbar-brand" href="#"><img id="logoNav" src="logo.png"></a>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="create.html">Create</a></li>
+				        <li><a href="view.html">View</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
 		</div>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1 formPanel">
@@ -31,7 +38,7 @@
 					  <h3 id="headline">Your Flash Cards</h3>
 					</div>
 					<div class="panel-body">
-						<div class="col-xs-2">
+						<div class="col-xs-2 yourCardsNavContainer">
 							<div id="yourCardsNav" class="btn-group-vertical" role="group" aria-label="Flash Card Button Listing">
 							</div>
 						</div>
@@ -42,13 +49,13 @@
 								<!-- =========================================== -->
 								<div class="flip-container">
 									<div class="flipper">
-										<div class="front">
+										<div class="front text-center">
 											<!-- front content -->
-											<h1>This is the front!</h1>
+											<h1 id="cardFrontText">This is the front!</h1>
 										</div>
-										<div class="back">
+										<div class="back text-center">
 											<!-- back content -->
-											<h1>This is the back!</h1>
+											<h1 id="cardBackText">This is the back!</h1>
 										</div>
 									</div>
 								</div>

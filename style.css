@@ -47,8 +47,14 @@ text-align: right;
   margin-top: -5%;
 }
 
+.yourCardsNavContainer {
+  max-height: 50vh;
+  overflow: auto;
+}
 
-
+.menuNavBtn {
+  float: right;
+}
 
 
 
@@ -81,10 +87,12 @@ text-align: right;
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
-
+  
   position: absolute;
   top: 0;
   left: 0;
+  padding-top: 20%;
+  background-color: #d6d6c1;
 }
 
 /* front pane, placed above back */
@@ -92,13 +100,13 @@ text-align: right;
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
-  background-color: blue;
+  
 }
 
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
-  background-color: red;
+  
 }
 /*============================================================================*/
 

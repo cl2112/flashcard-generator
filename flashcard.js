@@ -3,7 +3,13 @@
 
 var cardArray = [];
 
-cardArray = JSON.parse(localStorage.getItem("cardArray"));
+if (JSON.parse(localStorage.getItem("cardArray")) === null) {
+	cardArray = [];
+} else {
+	cardArray = JSON.parse(localStorage.getItem("cardArray"));
+}
+
+
 
 console.log(cardArray);
 
@@ -17,6 +23,22 @@ $("#cardViewBack").on("click", function() {
 	$(".flipper").css("transform", "rotateY(180deg)");
 });
 
+$(document).on("click", ".cardBtn", function(){
+	var arrayLocation = $(this).attr("id");
+	var cardObj = cardArray[arrayLocation];
+	console.log(cardObj);
+
+	if (cardObj.type === "basic"){
+		$("#cardFrontText").html(cardObj.front);
+		$("#cardBackText").html(cardObj.back);
+	} else if (cardObj.type === "cloze") {
+		
+		$("#cardFrontText").html(cardObj.partial = eval("(" + cardObj.partial + ")"));
+		$("#cardBackText").html(cardObj.cloze);
+	} else {
+		console.log("error, there was a problem with the card obj.")
+	}
+});
 
 $("#cardTypeDef").on("click", function(){
 	cardType = 1;
@@ -63,7 +85,7 @@ $("#createBtn").on("click", function () {
 
 function fillYourCardsNav(){
 	for (var i=0; i<cardArray.length; i++) {
-		$("#yourCardsNav").append('<button type="button" class="btn btn-default" id="card'+i+'">'+cardArray[i].title+'</button>');
+		$("#yourCardsNav").append('<button type="button" class="btn btn-default cardBtn" id="'+i+'">'+cardArray[i].title+'</button>');
 		console.log("appended");
 	}
 }
@@ -78,6 +100,7 @@ function BasicCard(title,front, back) {
 	this.title = title;
 	this.front = front;
 	this.back = back;
+	this.type = "basic";
 };
 
 
@@ -98,6 +121,7 @@ function ClozeCard(title, cloze, text) {
 	this.title = title;
 	this.cloze = cloze;
 	this.fullText = text;
+	this.type = "cloze";
 	this.partial = function() {
 		var partialText = this.fullText.replace(this.cloze, "...");
 		return partialText;
@@ -106,11 +130,11 @@ function ClozeCard(title, cloze, text) {
 
 // console.log("Broken");
 
-// var ben = new ClozeCard("Ben Franklin was Great!", "Ben Franklin");
+var ben = new ClozeCard("ben", "Ben Franklin", "Ben Franklin was Great!");
 
-// console.log(ben.cloze);
-// console.log(ben.fullText);
-// console.log(ben.partial());
+console.log(ben.cloze);
+console.log(ben.fullText);
+console.log(ben.partial());
 
 
 // ClozeCard should have a property or method that contains or returns only the cloze-deleted portion of the text.
