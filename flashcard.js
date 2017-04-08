@@ -1,7 +1,13 @@
-var input = process.argv[2];
+$(document).ready(function(){
 
 
 
+
+
+
+
+
+// Basic flash card constructor
 function BasicCard(front, back) {
 	this.front = front;
 	this.back = back;
@@ -16,6 +22,7 @@ console.log(george.back);
 
 
 
+// Cloze flash card constructor
 function ClozeCard(text, cloze) {
 	if (text.indexOf(cloze) === -1) {
 		console.log("ERROR - The CLOZE text is not in the full text.");
@@ -45,3 +52,9 @@ console.log(ben.partial());
 // ClozeCard should have a property or method that contains or returns only the full text.
 
 // ClozeCard should throw or log an error when the cloze deletion does not appear in the input text
+
+
+
+// End of .ready()
+});
+

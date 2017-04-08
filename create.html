@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="flashcard.js"></script>
+	<title>Study.Group</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">
+			        <img alt="Brand" src="logo.png" id="logoNav">
+			      </a>
+			    </div>
+			  </div>
+			</nav>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 formPanel">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3>Create a Flash Card</h3>
+				  </div>
+				  <div class="panel-body">
+				    <div class="btn-group cardTypeSelector" role="group" aria-label="card type selector">
+					  <button type="button" class="btn btn-default">Definition</button>
+					  <button type="button" class="btn btn-default">Cloze</button>
+					</div>
+				    <form>
+					  <div class="form-group">
+					    <label>Card Title</label>
+					    <input type="text" class="form-control" id="cardTitle" placeholder="Card Title">
+					  </div>
+					  <div class="form-group">
+					    <label>Front</label>
+					    <input type="text" class="form-control" id="cardFront" placeholder="Front of Card (Ex. George Washington)">
+					  </div>
+					  <div class="form-group">
+					    <label>Back</label>
+					    <input type="text" class="form-control" id="cardBack" placeholder="Back of Card (Ex. Was the first president of the U.S.A.)">
+					  </div>
+					</form>
+
+				  </div>
+				</div>
+				
+		</div>
+		<div class="footer">
+				<div class="container-fluid">
+					<p>Footer</p>
+					Graduation graphic by <a href="http://www.flaticon.com/authors/freepik">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
+				</div>
+			</div>
+		
+	</div>
+</body>
+</html>
