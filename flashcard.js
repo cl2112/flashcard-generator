@@ -6,7 +6,11 @@ var cardArray = [];
 if (JSON.parse(localStorage.getItem("cardArray")) === null) {
 	cardArray = [];
 } else {
-	cardArray = JSON.parse(localStorage.getItem("cardArray"));
+	cardArray = JSON.parse(localStorage.getItem("cardArray", function(key, value){
+		if (key == "patrial"){
+			return 
+		}
+	} ));
 }
 
 
