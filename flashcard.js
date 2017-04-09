@@ -15,6 +15,8 @@ console.log(cardArray);
 
 var cardType = 1;
 
+
+
 $("#cardViewFront").on("click", function() {
 	$(".flipper").css("transform", "rotateY(0deg)");
 });
@@ -32,8 +34,11 @@ $(document).on("click", ".cardBtn", function(){
 		$("#cardFrontText").html(cardObj.front);
 		$("#cardBackText").html(cardObj.back);
 	} else if (cardObj.type === "cloze") {
-		
-		$("#cardFrontText").html(cardObj.partial = eval("(" + cardObj.partial + ")"));
+		cardObj.prototype.partial = function(){
+			var partialText = this.fullText.replace(this.cloze, "...");
+			return partialText;
+		}
+		$("#cardFrontText").html(cardObj.partial());
 		$("#cardBackText").html(cardObj.cloze);
 	} else {
 		console.log("error, there was a problem with the card obj.")
