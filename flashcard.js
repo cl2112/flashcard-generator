@@ -15,6 +15,7 @@ if (JSON.parse(localStorage.getItem("cardArray")) === null) {
 
 
 
+
 console.log(cardArray);
 
 var cardType = 1;
